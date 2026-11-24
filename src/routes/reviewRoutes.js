@@ -32,7 +32,7 @@ router.put("/:id", authenticateToken, async (req, res) => {
       !Number.isInteger(numericRating) ||
       numericRating < 1 ||
       numericRating > 10 ||
-      typeof comment == !"string" ||
+      typeof comment !== "string" ||
       !comment.trim()
     ) {
       return res.status(400).json({

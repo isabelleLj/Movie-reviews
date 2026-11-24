@@ -8,7 +8,7 @@ Users can register and log in, browse movies, write and update reviews, and mana
 
 ## Technologies
 
-- Node.js
+- Node.js (Recomends v24.13.0)
 - Express
 - MySQL
 - JavaScript
@@ -27,7 +27,7 @@ Users can register and log in, browse movies, write and update reviews, and mana
 2. Navigate to the project directory:
 
    ```bash
-   cd FilmRecension
+   cd Movie-reviews
    ```
 
 3. Install dependencies:

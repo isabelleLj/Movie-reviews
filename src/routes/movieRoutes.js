@@ -105,6 +105,28 @@ router.post("/:movieId/reviews", authenticateToken, async (req, res) => {
       });
     }
 
+    const [movie] = await pool.query(
+      "SELECT id FROM reviews WHERE movie_id = ?",
+      [movieId],
+    );
+
+    if (movie.length < 1) {
+      return res.status(404).json({
+        message: "Movie do not exist",
+      });
+    }
+
+    const [existingReviews] = await pool.query(
+      "SELECT id FROM reviews WHERE user_id = ? AND movie_id = ?",
+      [userId, movieId],
+    );
+
+    if (existingReviews.length > 0) {
+      return res.status(409).json({
+        message: "Review alredy exist",
+      });
+    }
+
     const [result] = await pool.query(
       "INSERT INTO reviews (user_id, movie_id, rating, comment) VALUES (?, ?, ?, ?)",
       [userId, movieId, rating, comment],
