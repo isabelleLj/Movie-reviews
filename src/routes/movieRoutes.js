@@ -106,7 +106,7 @@ router.post("/:movieId/reviews", authenticateToken, async (req, res) => {
     }
 
     const [movie] = await pool.query(
-      "SELECT id FROM reviews WHERE movie_id = ?",
+      "SELECT id FROM movies WHERE movie_id = ?",
       [movieId],
     );
 
