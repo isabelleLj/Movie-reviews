@@ -105,10 +105,9 @@ router.post("/:movieId/reviews", authenticateToken, async (req, res) => {
       });
     }
 
-    const [movie] = await pool.query(
-      "SELECT id FROM movies WHERE movie_id = ?",
-      [movieId],
-    );
+    const [movie] = await pool.query("SELECT id FROM movies WHERE id = ?", [
+      movieId,
+    ]);
 
     if (movie.length < 1) {
       return res.status(404).json({
