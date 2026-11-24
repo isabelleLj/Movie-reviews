@@ -32,6 +32,29 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Skapa film
+router.post("/", async (req, res) => {
+  try {
+    const { title, genre, release_year } = req.body;
+
+    const [result] = await pool.query(
+      "INSERT INTO movies (title, genre, release_year) VALUES (?, ?, ?)",
+      [title, genre, release_year],
+    );
+
+    res.status(201).json({
+      message: "Movie created successfully",
+      movieId: result.insertId,
+    });
+  } catch (error) {
+    console.error("Error creating movie:", error.message);
+
+    res.status(500).json({
+      message: "Something went wrong when creating movie",
+    });
+  }
+});
+
 // Hämta en specifik film
 router.get("/:id", async (req, res) => {
   try {
