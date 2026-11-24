@@ -123,7 +123,7 @@ router.post("/:movieId/reviews", authenticateToken, async (req, res) => {
 
     if (existingReviews.length > 0) {
       return res.status(409).json({
-        message: "Review alredy exist",
+        message: "Review already exist",
       });
     }
 
