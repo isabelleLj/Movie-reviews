@@ -99,9 +99,9 @@ router.post("/:movieId/reviews", authenticateToken, async (req, res) => {
       });
     }
 
-    if (!Number.isInteger(Number(rating)) || rating < 1 || rating > 5) {
+    if (!Number.isInteger(Number(rating)) || rating < 1 || rating > 10) {
       return res.status(400).json({
-        message: "Rating must be an integer between 1 and 5",
+        message: "Rating must be an integer between 1 and 10",
       });
     }
 

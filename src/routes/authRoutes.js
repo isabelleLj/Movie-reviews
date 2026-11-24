@@ -14,6 +14,21 @@ router.post("/register", async (req, res) => {
       });
     }
 
+    if (
+      typeof email !== "string" ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+      return res.status(400).json({
+        message: "Please provide a valid email address",
+      });
+    }
+
+    if (typeof password !== "string" || password.trim().length < 8) {
+      return res.status(400).json({
+        message: "Password must be at least 8 characters long",
+      });
+    }
+
     const [existingUser] = await pool.query(
       "SELECT id FROM users WHERE email = ?",
       [email],
@@ -56,9 +71,25 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    const [users] = await pool.query("SELECT * FROM users WHERE email = ?", [
-      email,
-    ]);
+    if (
+      typeof email !== "string" ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+      return res.status(400).json({
+        message: "Please provide a valid email address",
+      });
+    }
+
+    if (typeof password !== "string" || password.trim().length < 8) {
+      return res.status(400).json({
+        message: "Password must be at least 8 characters long",
+      });
+    }
+
+    const [users] = await pool.query(
+      "SELECT id, email, password_hash FROM users WHERE email = ?",
+      [email],
+    );
 
     if (users.length === 0) {
       return res.status(401).json({
@@ -84,8 +115,6 @@ router.post("/login", async (req, res) => {
       message: "Login successful",
       token: token,
     });
-
-    //Fortsätter snart....
   } catch (error) {
     console.error("Login error:", error.message);
 

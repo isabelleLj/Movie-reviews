@@ -31,7 +31,7 @@ router.put("/:id", authenticateToken, async (req, res) => {
     if (
       !Number.isInteger(numericRating) ||
       numericRating < 1 ||
-      numericRating > 5 ||
+      numericRating > 10 ||
       typeof comment == !"string" ||
       !comment.trim()
     ) {
