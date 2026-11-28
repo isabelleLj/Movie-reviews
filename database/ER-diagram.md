@@ -1,3 +1,5 @@
+<!-- Beskriver databasens entiteter och relationer i ett Mermaid ER-diagram. -->
+
 # FilmRecension – Entity Relationship Diagram
 
 ```mermaid

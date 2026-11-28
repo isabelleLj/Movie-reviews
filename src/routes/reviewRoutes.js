@@ -1,3 +1,4 @@
+// Hanterar uppdatering av en recension som tillhör den inloggade användaren.
 const express = require("express");
 const router = express.Router();
 const pool = require("../config/database");

@@ -1,3 +1,4 @@
+// Hanterar film-endpoints samt hämtning och skapande av filmrecensioner.
 const express = require("express");
 const router = express.Router();
 const pool = require("../config/database");

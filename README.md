@@ -1,3 +1,5 @@
+<!-- Dokumenterar projektets syfte, installation, databas, API-endpoints och struktur. -->
+
 # FilmRecension API
 
 ## Project Description

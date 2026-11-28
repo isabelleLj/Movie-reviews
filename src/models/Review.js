@@ -1,3 +1,4 @@
+// Definierar Review-klassen och dess grundläggande recensionsegenskaper.
 class Review {
   constructor(id, userId, movieId, rating, comment) {
     this.id = id;

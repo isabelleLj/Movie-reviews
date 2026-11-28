@@ -1,3 +1,4 @@
+// Hanterar registrering och inloggning, inklusive lösenordshashning och JWT.
 const express = require("express");
 const router = express.Router();
 const pool = require("../config/database");

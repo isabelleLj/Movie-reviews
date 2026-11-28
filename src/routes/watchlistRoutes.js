@@ -1,3 +1,4 @@
+// Hanterar den inloggade användarens bevakningslista för filmer.
 const express = require("express");
 const router = express.Router();
 const pool = require("../config/database");

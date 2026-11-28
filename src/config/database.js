@@ -1,3 +1,4 @@
+// Skapar och exporterar en MySQL-anslutningspool konfigurerad via miljövariabler.
 const mysql = require("mysql2/promise");
 require("dotenv").config();
 

@@ -1,3 +1,4 @@
+// Definierar Movie-klassen och dess grundläggande filmegenskaper.
 class Movie {
   constructor(id, title, genre, releaseYear) {
     this.id = id;

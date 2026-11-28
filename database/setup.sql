@@ -1,3 +1,5 @@
+-- Skapar databasen filmrecension och tabellerna för användare, filmer,
+-- recensioner och användarnas bevakningslistor.
 CREATE DATABASE IF NOT EXISTS filmrecension;
 
 USE filmrecension;

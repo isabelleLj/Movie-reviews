@@ -1,3 +1,5 @@
+-- Fyller databasen med exempeldata för filmer och recensioner.
+-- Recensionerna förutsätter att två testanvändare redan har registrerats.
 USE filmrecension;
 
 -- Seed data: Movies

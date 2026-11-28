@@ -1,3 +1,4 @@
+// Verifierar Bearer-JWT-token och lägger den autentiserade användaren på requesten.
 const jwt = require("jsonwebtoken");
 
 const authenticateToken = (req, res, next) => {
