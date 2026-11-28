@@ -38,6 +38,37 @@ Users can register and log in, browse movies, write and update reviews, and mana
    npm install
    ```
 
+## Installation on macOS
+
+1. Install Homebrew by following the instructions at [brew.sh](https://brew.sh/).
+2. Install Node.js 24 and MySQL:
+
+   ```bash
+   brew install node@24 mysql
+   ```
+
+3. Add Node.js 24 to your `PATH` and reload your shell:
+
+   ```bash
+   echo 'export PATH="$(brew --prefix node@24)/bin:$PATH"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+
+4. Start the MySQL service:
+
+   ```bash
+   brew services start mysql
+   ```
+
+5. Clone the repository, navigate to the project directory, and install its dependencies as described above.
+6. Create a local environment file from the example:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edit `.env` with your MySQL credentials and a private JWT secret. The database setup and sample data steps are described below.
+
 ## Database Setup
 
 1. Make sure MySQL is running.
